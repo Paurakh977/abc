@@ -14,16 +14,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(920, 528)
+        MainWindow.resize(1200, 900)
+        MainWindow.setMaximumSize(QtCore.QSize(1501, 920))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.back_ground = QtWidgets.QWidget(self.centralwidget)
-        self.back_ground.setGeometry(QtCore.QRect(0, 0, 931, 501))
+        self.back_ground.setGeometry(QtCore.QRect(10, 0, 1200, 900))
         self.back_ground.setStyleSheet("\n"
 "background-color: rgb(245,245,245);")
         self.back_ground.setObjectName("back_ground")
         self.stripes = QtWidgets.QLabel(self.back_ground)
-        self.stripes.setGeometry(QtCore.QRect(20, 20, 281, 451))
+        self.stripes.setGeometry(QtCore.QRect(20, 20, 481, 821))
         self.stripes.setStyleSheet("background-image: url(:/newPrefix/leaf.png);")
         self.stripes.setText("")
         self.stripes.setPixmap(QtGui.QPixmap(":/newPrefix/leaf.png"))
@@ -31,12 +32,11 @@ class Ui_MainWindow(object):
         self.stripes.setWordWrap(False)
         self.stripes.setObjectName("stripes")
         self.form_background = QtWidgets.QLabel(self.back_ground)
-        self.form_background.setGeometry(QtCore.QRect(220, 20, 691, 451))
+        self.form_background.setGeometry(QtCore.QRect(-40, 0, 1221, 841))
         self.form_background.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.form_background.setText("")
         self.form_background.setObjectName("form_background")
         self.Login = QtWidgets.QPushButton(self.back_ground)
-        self.Login.setGeometry(QtCore.QRect(490, 180, 101, 31))
+        self.Login.setGeometry(QtCore.QRect(640, 210, 141, 51))
         font = QtGui.QFont()
         font.setFamily("Istok Web")
         font.setPointSize(-1)
@@ -47,13 +47,13 @@ class Ui_MainWindow(object):
         self.Login.setStyleSheet(" font-family: \'Istok Web\';\n"
 "            font-style: normal;\n"
 "            font-weight: 700;\n"
-"            font-size: 20px;\n"
-"            line-height: 28px;\n"
+"            font-size: 30px;\n"
+"            line-height: 38px;\n"
 "            color: #5F7C8D;\n"
 "background-color: transparent;")
         self.Login.setObjectName("Login")
         self.signup = QtWidgets.QPushButton(self.back_ground)
-        self.signup.setGeometry(QtCore.QRect(640, 180, 101, 31))
+        self.signup.setGeometry(QtCore.QRect(900, 220, 161, 41))
         font = QtGui.QFont()
         font.setFamily("Istok Web")
         font.setPointSize(-1)
@@ -64,13 +64,13 @@ class Ui_MainWindow(object):
         self.signup.setStyleSheet(" font-family: \'Istok Web\';\n"
 "            font-style: normal;\n"
 "            font-weight: 700;\n"
-"            font-size: 20px;\n"
-"            line-height: 28px;\n"
+"            font-size: 30px;\n"
+"            line-height: 38px;\n"
 "            color: #5F7C8D;\n"
 "background-color: transparent;")
         self.signup.setObjectName("signup")
         self.line = QtWidgets.QFrame(self.back_ground)
-        self.line.setGeometry(QtCore.QRect(490, 210, 118, 3))
+        self.line.setGeometry(QtCore.QRect(640, 260, 138, 3))
         self.line.setStyleSheet("position: absolute;\n"
 "            width: 90px;\n"
 "            height: 0px;\n"
@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.line_2 = QtWidgets.QFrame(self.back_ground)
-        self.line_2.setGeometry(QtCore.QRect(490, 270, 228, 2))
+        self.line_2.setGeometry(QtCore.QRect(620, 420, 441, 2))
         self.line_2.setStyleSheet("  position: absolute;\n"
 "            width: 432.17px;\n"
 "            height: 1px;\n"
@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.line_3 = QtWidgets.QFrame(self.back_ground)
-        self.line_3.setGeometry(QtCore.QRect(490, 330, 228, 2))
+        self.line_3.setGeometry(QtCore.QRect(620, 550, 441, 2))
         self.line_3.setStyleSheet("  position: absolute;\n"
 "            width: 432.17px;\n"
 "            height: 1px;\n"
@@ -103,53 +103,53 @@ class Ui_MainWindow(object):
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
         self.Login_button = QtWidgets.QPushButton(self.back_ground)
-        self.Login_button.setGeometry(QtCore.QRect(480, 370, 228, 31))
+        self.Login_button.setGeometry(QtCore.QRect(640, 660, 381, 71))
         self.Login_button.setStyleSheet(" position: absolute;\n"
 "            width: 432px;\n"
-"            height: 53px;\n"
+"            height: 73px;\n"
 "            left: 691px;\n"
 "            top: 581px;\n"
 "            background: #4B687A;\n"
 " font-family: \'Istok Web\';\n"
 "            font-style: normal;\n"
 "            font-weight: 600;\n"
-"            font-size: 18px;\n"
+"            font-size: 28px;\n"
 "color : white")
         self.Login_button.setObjectName("Login_button")
         self.username = QtWidgets.QLineEdit(self.back_ground)
-        self.username.setGeometry(QtCore.QRect(490, 240, 228, 31))
+        self.username.setGeometry(QtCore.QRect(620, 370, 441, 51))
         self.username.setStyleSheet("background: transparent;\n"
 "            font-family: \'Istok Web\';\n"
 "            font-style: normal;\n"
-"            font-size: 12px;\n"
+"            font-size: 22px;\n"
 "            color: rgba(95, 124, 141, 0.55);\n"
 " letter-spacing: 0.75px;\n"
 "border: none;")
         self.username.setObjectName("username")
         self.username_2 = QtWidgets.QLineEdit(self.back_ground)
-        self.username_2.setGeometry(QtCore.QRect(490, 300, 228, 31))
+        self.username_2.setGeometry(QtCore.QRect(620, 500, 441, 51))
         self.username_2.setStyleSheet("background: transparent;\n"
 "            font-family: \'Istok Web\';\n"
 "            font-style: normal;\n"
-"            font-size: 12px;\n"
+"            font-size: 22px;\n"
 "            color: rgba(95, 124, 141, 0.55);\n"
 " letter-spacing: 0.75px;\n"
-"border: none;")
+" border: none;")
         self.username_2.setText("")
         self.username_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.username_2.setObjectName("username_2")
         self.Welcome = QtWidgets.QLabel(self.back_ground)
-        self.Welcome.setGeometry(QtCore.QRect(510, 90, 201, 41))
+        self.Welcome.setGeometry(QtCore.QRect(710, 50, 291, 81))
         self.Welcome.setStyleSheet("position: absolute;\n"
-"width: 345px;\n"
-"height: 65px;\n"
+"width: 410px;\n"
+"height: 120px;\n"
 "left: 789px;\n"
 "top: 52px;\n"
 "\n"
 "font-family: \'Istok Web\';\n"
 "font-style: normal;\n"
 "font-weight: 700;\n"
-"font-size: 40px;\n"
+"font-size: 54px;\n"
 "line-height: 92px;\n"
 "\n"
 "color: #7A999C;\n"
@@ -168,7 +168,7 @@ class Ui_MainWindow(object):
         self.stripes.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 920, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1200, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -181,6 +181,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.form_background.setText(_translate("MainWindow", " "))
         self.Login.setText(_translate("MainWindow", "Login"))
         self.signup.setText(_translate("MainWindow", "SignUp"))
         self.Login_button.setText(_translate("MainWindow", "Login"))

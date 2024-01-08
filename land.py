@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import icons_rc
+
 
 
 class Ui_MainWindow(object):
@@ -173,6 +175,41 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        # Add a flag to track the menu state (collapsed or expanded)
+        self.menu_expanded = False
+
+        # Connect the button click event to the toggle_menu function
+        self.pushButton.clicked.connect(self.toggle_menu)
+
+        # Set up the animation for the side menu
+        self.side_menu_animation = QtCore.QPropertyAnimation(self.side_menu, b"maximumWidth")
+        self.side_menu_animation.setDuration(300)
+
+        # Set up the central widget animation for overlay effect
+        self.central_widget_animation = QtCore.QPropertyAnimation(self.centralwidget, b"geometry")
+        self.central_widget_animation.setDuration(300)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def toggle_menu(self):
+        # Toggle the menu state
+        self.menu_expanded = not self.menu_expanded
+
+        # Define the target width for the side menu
+        target_width = 200 if self.menu_expanded else 0
+
+        # Update the side menu animation
+        self.side_menu_animation.setEndValue(target_width)
+        self.side_menu_animation.start()
+
+        # Update the central widget animation for overlay effect
+        if self.menu_expanded:
+            self.central_widget_animation.setEndValue(QtCore.QRect(200, 0, 586, 370))
+        else:
+            self.central_widget_animation.setEndValue(QtCore.QRect(0, 0, 586, 370))
+        self.central_widget_animation.start()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -185,7 +222,6 @@ class Ui_MainWindow(object):
         self.pushButton_5.setText(_translate("MainWindow", "Item 4"))
         self.pushButton_6.setText(_translate("MainWindow", "Item 5"))
         self.label_2.setText(_translate("MainWindow", "Main - Body "))
-import icons_rc
 
 
 if __name__ == "__main__":
